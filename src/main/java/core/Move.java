@@ -1,4 +1,7 @@
 package core;
 
-public class Move {
+public record Move(int from, int to) {
+    @Override public String toString() {
+        return from + " -> " + to;
+    }
 }

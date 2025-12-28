@@ -57,7 +57,7 @@ public class Board {
     public void setupStartingPosition() {
         // Clear playable squares
         for (int sq = 0; sq < 100; sq++) {
-            if (s*quares[sq] != OFF_BOARD) squares[sq] = EMPTY;
+            if (squares[sq] != OFF_BOARD) squares[sq] = EMPTY;
         }
 
         // Black back rank at 11..18, pawns at 21..28
@@ -107,6 +107,4 @@ public class Board {
             default -> '?';
         };
     }
-
-
 }

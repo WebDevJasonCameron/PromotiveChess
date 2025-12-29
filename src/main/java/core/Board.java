@@ -4,23 +4,13 @@ import java.util.Arrays;
 
 import static core.Pieces.*;
 
-public class Board {
-
-    /**
-     * ATTs
-     */
+public final class Board {
     private final int[] squares = new int[100];
 
-    /**
-     * CONs
-     */
     public Board() {
         initMailbox();
     }
 
-    /**
-     * METHs
-     */
     public int[] squares() {
         return squares;
     }
@@ -37,7 +27,7 @@ public class Board {
         return sq >= 0 && sq < 100;
     }
 
-    public boolean isPlayableSquares(int sq) {
+    public boolean isPlayableSquare(int sq) {
         if (!inBoundsIndex(sq)) return false;
         return squares[sq] != OFF_BOARD;
     }
@@ -70,7 +60,6 @@ public class Board {
         set(81, W_ROOK);   set(82, W_KNIGHT); set(83, W_BISHOP); set(84, W_QUEEN);
         set(85, W_KING);   set(86, W_BISHOP); set(87, W_KNIGHT); set(88, W_ROOK);
     }
-
 
     public String pretty() {
         // Print ranks 8..1 (top playable row is 11..18)
